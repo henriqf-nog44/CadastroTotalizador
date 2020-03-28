@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CadastroTotalizador';
+  nome = null;
+  pessoas = [];
+
+  salvar(){
+    this.pessoas.push({
+      nome: this.nome
+    });
+    this.nome = null;
+  }
+
+  remover(pessoa){
+    const i = this.pessoas.indexOf(pessoa);
+    this.pessoas.splice(i, 1);
+  }
 }
